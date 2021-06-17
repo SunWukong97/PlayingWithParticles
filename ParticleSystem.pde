@@ -20,15 +20,21 @@ public class ParticleSystem
   
   void run()
   {
-    for(int i = 0; i < particles.size(); i++)
+    
+    for(Particle p : particles)
     {
       Particle p = particles.get(i);
       p.run();
-      //if(p.loc.x < 0 || p.loc.x > screenWidth || p.loc.y < 0)
-      //  particles.remove(p);
+      
       wrap(p);
-      //if(p.deadParticle())
-      //  particles.remove(p);
+    }
+    //for(int i = 0; i < particles.size(); i++)
+    //{
+    //  Particle p = particles.get(i);
+    //  p.run();
+      
+    //  wrap(p);
+      
       
       //println(p.loc.x);
     }
