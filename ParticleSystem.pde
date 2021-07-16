@@ -14,7 +14,7 @@ public class ParticleSystem
   public void addParticle()
   {
     
-    particles.add(new Particle(new PVector(random(0, this.screenWidth), this.screenHeight/2), this.screenHeight, this.screenWidth));
+    particles.add(new Particle(new PVector(random(0, this.screenWidth), random(this.screenHeight)/2), this.screenHeight, this.screenWidth));
     //println(particles.size());
   }
   
@@ -23,21 +23,10 @@ public class ParticleSystem
     
     for(Particle p : particles)
     {
-      Particle p = particles.get(i);
       p.run();
-      
       wrap(p);
     }
-    //for(int i = 0; i < particles.size(); i++)
-    //{
-    //  Particle p = particles.get(i);
-    //  p.run();
-      
-    //  wrap(p);
-      
-      
-      //println(p.loc.x);
-    }
+    
   }
   
   void wrap(Particle p)
